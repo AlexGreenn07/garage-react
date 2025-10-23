@@ -1,6 +1,3 @@
-export function Button() {
-  const handleClick = () => {
-    alert("меня нажали");
-  };
-  return <button onClick={handleClick}>Кнопка</button>;
+export function Button({ label, onClick }) {
+  return <button onClick={onClick}>{label}</button>;
 }
