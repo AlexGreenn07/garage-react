@@ -1,16 +1,17 @@
-import { Button } from "../components/Button";
 import { UserList } from "../components/UserList";
 import "./HomePage.css";
 
-function HomePage() {
+function HomePage({ click, setClick }) {
   const handleClick = () => {
-    alert("меня нажали");
+    setClick(click + 1);
   };
+
   return (
     <div className="home-page">
       <h2>Домашняя страница</h2>
       <p>Добро пожаловать на наш сайт!</p>
-      <Button label="Нажми меня" onClick={handleClick}></Button>
+      <button onClick={handleClick}>Нажми меня</button>
+      <p>{click}</p>
       <UserList></UserList>
     </div>
   );
