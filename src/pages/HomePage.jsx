@@ -1,19 +1,41 @@
-import { UserList } from "../components/UserList";
+import { useState } from "react";
 import "./HomePage.css";
 
-function HomePage({ click, setClick }) {
-  const handleClick = () => {
-    setClick(click + 1);
-  };
+function HomePage() {
+  const [value, setValue] = useState("");
+
+  function handleChange(event) {
+    setValue(event.target.value);
+  }
+  function handleSubmit(event) {
+    event.preventDefault();
+    alert("Форма отправлена");
+  }
+  function handleKeyDown(event) {
+    if (event.key === "Enter") {
+      alert(`Вы нажали Enter! Введенный текст: ${value}`);
+    }
+  }
 
   return (
-    <div className="home-page">
-      <h2>Домашняя страница</h2>
-      <p>Добро пожаловать на наш сайт!</p>
-      <button onClick={handleClick}>Нажми меня</button>
-      <p>{click}</p>
-      <UserList></UserList>
-    </div>
+    <>
+      <div className="home-page">
+        <h2>Домашняя страница</h2>
+        <p>Добро пожаловать на наш сайт!</p>
+        <button>Нажми меня</button>
+        <input
+          type="text"
+          value={value}
+          onChange={handleChange}
+          onKeyDown={handleKeyDown}
+          placeholder="Введите текст"
+        />
+        <p>{value}</p>
+        <form onSubmit={handleSubmit}>
+          <button type="submit">Отправить</button>
+        </form>
+      </div>
+    </>
   );
 }
 export default HomePage;

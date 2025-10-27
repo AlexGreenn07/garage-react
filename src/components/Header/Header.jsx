@@ -1,17 +1,10 @@
 import "./Header.css";
 
-function Header({ click, isDarkMode, setIsDarkMode }) {
+function Header() {
   return (
-    <header
-      className="container"
-      style={{
-        background: isDarkMode ? "white" : "#2e2e2e",
-        color: isDarkMode ? "black" : "white",
-        height: 200,
-      }}
-    >
+    <header className="container">
       <h1>Заголовок</h1>
-      <p>{click}</p>
+      <p>{}</p>
     </header>
   );
 }
