@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { useState } from "react";
-import "./HomePage.css";
+import "./HomeColumnLeft.css";
 
-function HomePage() {
+function HomeColumnLeft() {
   const [value, setValue] = useState("");
 
   function handleChange(event) {
@@ -39,4 +38,4 @@ function HomePage() {
     </>
   );
 }
-export default HomePage;
+export default HomeColumnLeft;

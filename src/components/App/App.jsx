@@ -1,14 +1,18 @@
 import Header from "../Header/Header.jsx";
-import HomePage from "../../pages/HomePage.jsx";
+import HomeColumnLeft from "../../pages/Left/HomeColumnLeft.jsx";
+import HomeColumnRight from "../../pages/Right/HomeColumnRight.jsx";
 import { Footer } from "../Footer/Footer.jsx";
-import { useState } from "react";
 import "./App.css";
+import "./BodyPage.css";
 
 function App() {
   return (
     <main className="app">
       <Header></Header>
-      <HomePage></HomePage>
+      <div className="bodyPage">
+        <HomeColumnLeft></HomeColumnLeft>
+        <HomeColumnRight></HomeColumnRight>
+      </div>
       <Footer></Footer>
     </main>
   );
